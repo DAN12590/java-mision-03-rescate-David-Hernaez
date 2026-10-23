@@ -1,23 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class rescate {
-
-    static class wasd {
-        static int movWA(int num) {
-            if (num != 0) {
-                num--;
-            }
-            return num;
-        }
-        static int movSD(int num) {
-            if (num != 9) {
-                num++;
-            }
-            return num;
-        }
-    }
-
+public class main {
     public static void main(String[] args) {
         char [][] tablero = new char[10][10];
 
@@ -65,9 +49,10 @@ public class rescate {
 
         Scanner sc = new Scanner(System.in);
 
+        while (movimiento!='q'){
             System.out.println("Vidas: "+ vidas);
-        System.out.println("Dime donde te quieres mover, W A S D");
-        movimiento = sc.next().charAt(0);
+            System.out.println("Dime donde te quieres mover, W A S D , q para salir");
+            movimiento = Character.toLowerCase(sc.next().charAt(0));
             int antY = posY;
             int antX = posX;
             switch (movimiento){
@@ -82,6 +67,8 @@ public class rescate {
                     break;
                 case 'd':
                     posX = wasd.movSD(posX);
+                    break;
+                case 'q':
                     break;
                 default:
                     System.out.println("Letra no valida");
@@ -113,6 +100,20 @@ public class rescate {
                 System.out.println();
             }
         }
-
     }
+    static class wasd {
+        static int movWA(int num) {
+            if (num != 0) {
+                num--;
+            }
+            return num;
+        }
+        static int movSD(int num) {
+            if (num != 9) {
+                num++;
+            }
+            return num;
+        }
+    }
+}
 
