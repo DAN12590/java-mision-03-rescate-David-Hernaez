@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class rescate {
 
-    public class wasd {
+    static class wasd {
         static int movWA(int num) {
             if (num != 0) {
                 num--;
@@ -66,8 +66,8 @@ public class rescate {
         Scanner sc = new Scanner(System.in);
 
             System.out.println("Vidas: "+ vidas);
-            System.out.println("Dime donde te quieres mover, W A S D , q para salir");
-            movimiento = Character.toLowerCase(sc.next().charAt(0));
+        System.out.println("Dime donde te quieres mover, W A S D");
+        movimiento = sc.next().charAt(0);
             int antY = posY;
             int antX = posX;
             switch (movimiento){
@@ -82,8 +82,6 @@ public class rescate {
                     break;
                 case 'd':
                     posX = wasd.movSD(posX);
-                    break;
-                case 'q':
                     break;
                 default:
                     System.out.println("Letra no valida");
